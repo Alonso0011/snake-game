@@ -1,0 +1,15 @@
+# Ignorar o ambiente virtual
+venv/
+
+# Ignorar o arquivo de banco de dados
+ranking.db
+
+# Ignorar arquivos de sistema
+*.log
+*.bak
+*.swp
+*.tmp
+
+# Ignorar arquivos do sistema do Windows
+Thumbs.db
+.DS_Store
