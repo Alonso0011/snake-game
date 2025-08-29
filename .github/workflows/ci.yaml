@@ -7,6 +7,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: ${{ github.workspace }}  # garante que "src" é top-level
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -19,9 +21,11 @@ jobs:
       - name: Install deps
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          # fallback: caso requirements.txt não exista ainda
-          pip install pytest || true
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install pytest
+
+      - name: Sanity check Python path
+        run: python -c "import sys, pathlib; print('PYTHONPATH OK:', pathlib.Path('.').resolve()); print('sys.path[0]=', sys.path[0])"
 
       - name: Run tests
         run: pytest -q
