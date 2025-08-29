@@ -1,15 +1,22 @@
-# Ignorar o ambiente virtual
-venv/
+# Ambientes virtuais
+.venv/
+env/
 
-# Ignorar o arquivo de banco de dados
-ranking.db
+# Cache do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 
-# Ignorar arquivos de sistema
+# Logs e configs locais
 *.log
-*.bak
-*.swp
-*.tmp
+*.env
+*.ini
 
-# Ignorar arquivos do sistema do Windows
-Thumbs.db
+# Arquivos temporários do sistema
 .DS_Store
+Thumbs.db
+
+# Pastas do VSCode / IDEs
+.vscode/
+.idea/
