@@ -1,12 +1,16 @@
 # Ambientes virtuais
 .venv/
 env/
+venv/
 
 # Cache do Python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
+
+# Bancos locais
+*.db
 
 # Logs e configs locais
 *.log
